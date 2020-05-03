@@ -28,6 +28,6 @@ var listener = app.listen(4600,function(req,res){
 
 app.post('/app/jsonList',function(req,res){
     console.log("gotit app users é go tit from ang");
-    res.send('hello worl');
+    res.send('hello world');
     });
 
