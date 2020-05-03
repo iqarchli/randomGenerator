@@ -1,0 +1,109 @@
+
+   <!-- <div class="col-md-10">
+
+
+<button id="button_add" class="btn btn-default" ng-click="$ctrl.rand($ctrl.test)">Add</button>
+   
+    
+    <input type="text" ng-model="$ctrl.test">
+        
+    <h3>{{$ctrl.result}}</h3>
+    
+   
+
+    </div> -->
+<!-- this can be used as a layout for the sub page -->
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">Number Input Generator</li>
+    </ol>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class=" border-0 rounded-lg mt-6">
+                <h3>Generation Parameters</h3>
+                <div class="justify-content-center">
+                    <form>
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-group"><label class="small mb-1" for="">Range Starts at</label><input class="form-control py-4" id="depth" type="text" placeholder="Start from" /></div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="">Numbers to generate</label> <br>
+                                    <div class="form-check form-check-inline col-md-12">
+                                      <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+                                      <label class="form-check-label" for="inlineCheckbox5"> Integers only</label>
+                                      
+                                    </div>
+                                    <div class="form-check form-check-inline col-md-12">
+                                      <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
+                                      <label class="form-check-label" for="inlineCheckbox6"> Decimals only</label>
+                                    </div>
+                            </div>
+                             <div class="col-md-6">
+                                <div class="form-group"><label class="small mb-1" for="">Range Ends at</label><input class="form-control py-4" id="" type="text" placeholder="End at" />
+                                 
+                                    
+                                    <label class="small mb-1" for="">Delimiter</label><input class="form-control py-4" id="" type="text" ng-model="$ctrl.delimiter" ng-value="$ctrl.delimiter" placeholder="Pick a delimiter between generated numbers"
+                                    />
+                                 </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="small mb-1" for="">Digits after floating point</label><input class="form-control py-4" id="" type="text" placeholder="How many digits after the decimal point" />
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group  col-md-6 mt-4 mb-0"><a class="btn btn-primary btn-block" href="">Randomize</a></div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class=" border-0 rounded-lg mt-6">
+                <h3>Randamization Options</h3>
+                <div class="justify-content-center">
+                    <form>
+                        <div class="form-row">
+                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                 <label class="small mb-1" for="">Type of randomness</label> <br>
+                                <div class="form-check form-check-inline col-md-6">
+                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                  <label class="form-check-label" for="inlineCheckbox1">Pseudo Random</label>
+                                </div>
+                                <div class="form-check form-check-inline col-md-6">
+                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                  <label class="form-check-label" for="inlineCheckbox2">Pure Random</label>
+                                </div>
+                                </div>
+                            </div>
+                             
+                            
+                        </div>
+                        
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="col-lg-12">
+         <div class="justify-content-center">
+                    <form>
+                        <textarea class="form-control form-group mt-4 mb-0 col-md-12" rows="10" placeholder="Output..."></textarea>
+                    </form>
+                </div>
+        </div>
+    </div>
+           
+     
+          
+  
+    
+    
+    
+    
+
+

@@ -1,0 +1,103 @@
+
+   <!-- <div class="col-md-10">
+
+
+<button id="button_add" class="btn btn-default" ng-click="$ctrl.rand($ctrl.test)">Add</button>
+   
+    
+    <input type="text" ng-model="$ctrl.test">
+        
+    <h3>{{$ctrl.result}}</h3>
+    
+   
+
+    </div> -->
+<!-- this can be used as a layout for the sub page -->
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">String Input Generator</li>
+    </ol>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class=" border-0 rounded-lg mt-6">
+                <h3>Generation Parameters</h3>
+                <div class="justify-content-center">
+                    <form>
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-group"><label class="small mb-1" for="">String  Length</label><input on-click="" class="form-control py-4" id="strlen" type="text" placeholder="How long should the string be" /></div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="">String Options</label><br>
+                                    <div class="form-group">
+                                      <select class="form-control py-4" ng-model="$ctrl.strOpt" ng-change="$ctrl.setTest()" ng-options="item.name for item in $ctrl.options track by item.id">
+                                        </select>
+                                      
+                                    </div>
+                            </div>
+                             <div class="col-md-6">
+                                <div class="form-group">
+                                    
+                                    <label class="small mb-1" for="">Number of results</label>
+                                    <input class="form-control py-4" id="" type="text" placeholder="Number of results " />
+                                 </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="small mb-1" for="">Characters to use</label><textarea class="form-group form-control mt-1 mb-0 col-md-12" rows="5" placeholder="Alphabet ..." ng-disabled="$ctrl.disChar" ng-model ="$ctrl.alpha" ng-change="$ctrl.setTest()"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 mt-4 mb-0"><a class="btn btn-primary btn-block" href="">Randomize</a></div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class=" border-0 rounded-lg mt-6">
+                <h3>Randamization Options</h3>
+                <div class="justify-content-center">
+                    <form>
+                        <div class="form-row">
+                            
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                 <label class="small mb-1" for="">Type of randomness</label> <br>
+                                <div class="form-check form-check-inline col-md-6">
+                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                  <label class="form-check-label" for="inlineCheckbox1">Pseudo Random</label>
+                                </div>
+                                <div class="form-check form-check-inline col-md-6">
+                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                  <label class="form-check-label" for="inlineCheckbox2">Pure Random</label>
+                                </div>
+                                </div>
+                            </div>
+                             
+                            
+                        </div>
+                        
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="col-lg-12">
+         <div class="justify-content-center">
+                    <form>
+                        <textarea class="form-group mt-4 mb-0 col-md-12" rows="10" placeholder="Output..."></textarea>
+                    </form>
+                </div>
+        </div>
+    </div>
+           
+     
+          
+  
+    
+    
+    
+    
+
+

@@ -1,0 +1,109 @@
+
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">Json Input Generator</li>
+    </ol>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class=" border-0 rounded-lg mt-6">
+                <h3>Generation Parameters</h3>
+                <div class="justify-content-center">
+                    <form>
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-group"><label class="small mb-1" for="">JSON's Depth</label><input class="form-control py-4" id="depth" type="text" placeholder="JSON structures's depth" /></div>
+                            </div>
+                             <div class="col-md-6">
+                                <div class="form-group"><label class="small mb-1" for="">Max elements per depth</label><input class="form-control py-4" id="" type="text" placeholder="Depth level" /></div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                 <label class="small mb-1" for="">Data types</label> <br>
+                                <div class="form-check form-check-inline col-md-12">
+                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                  <label class="form-check-label" for="inlineCheckbox1">Strings</label>
+                                </div>
+                                <div class="form-check form-check-inline col-md-12">
+                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                  <label class="form-check-label" for="inlineCheckbox2">Booleans</label>
+                                </div>
+                                <div class="form-check form-check-inline col-md-12">
+                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" >
+                                  <label class="form-check-label" for="inlineCheckbox3">Integers</label>
+                                </div>
+                                <div class="form-check form-check-inline col-md-12">
+                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4" >
+                                  <label class="form-check-label" for="inlineCheckbox4">Objects</label>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="small mb-1" for="">String Options</label> <br>
+                                    <div class="form-check form-check-inline col-md-12">
+                                      <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+                                      <label class="form-check-label" for="inlineCheckbox5">Random English words</label>
+                                      
+                                    </div>
+                                    <div class="form-check form-check-inline col-md-12">
+                                      <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
+                                      <label class="form-check-label" for="inlineCheckbox6">Random strings</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 mt-4 mb-0"><a class="btn btn-primary btn-block" href="">Randomize</a></div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class=" border-0 rounded-lg mt-6">
+                <h3>Randamization Options</h3>
+                <div class="justify-content-center">
+                    <form>
+                        <div class="form-row">
+                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                 <label class="small mb-1" for="">Type of randomness</label> <br>
+                                <div class="form-check form-check-inline col-md-6">
+                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                  <label class="form-check-label" for="inlineCheckbox1">Pseudo Random</label>
+                                </div>
+                                <div class="form-check form-check-inline col-md-6">
+                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                  <label class="form-check-label" for="inlineCheckbox2">Pure Random</label>
+                                </div>
+                                </div>
+                            </div>
+                             
+                            
+                        </div>
+                        
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="col-lg-12">
+         <div class="justify-content-center">
+                    <form ng-submit="$ctrl.getRandJson()">
+                        <textarea class="form-control form-group mt-4 mb-0 col-md-12" rows="10" ng-model="$ctrl.template"></textarea>
+                        <button class="btn btn-primary btn-block col-md-6 mt-4 mb-0" type="submit">Randomize</button>
+               
+                    </form>
+                </div>
+        </div>
+    </div>
+           
+     
+          
+  
+    
+    
+    
+    
+
+
