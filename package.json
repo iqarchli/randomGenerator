@@ -17,6 +17,7 @@
   "dependencies": {
     "dummy-json": "^2.0.0",
     "express": "^4.17.1",
+    "ngclipboard": "^2.0.0",
     "nodemon": "^2.0.3"
   }
 }

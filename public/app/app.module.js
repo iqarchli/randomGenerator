@@ -5,6 +5,7 @@ angular.module('phonecatApp', [
   'ngAnimate',
   'ngRoute',
   'core',
+  'ngclipboard',
   'testList',
   'jsonList',
   'csvList',

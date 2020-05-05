@@ -30,12 +30,16 @@ var listener = app.listen(4600,function(req,res){
 }); 
 
 app.post('/app/jsonList',function(req,res){
+    res.set('Content-Type', 'application/json');
     //var template = 
     //console.log(req);
     //res:
+    var template = req.body.template;
+    var result = dummyjson.parse(template);
     
-    //res.json({message: "it worked", data: req.body});
-    res.json(req.body.template);
+    
+    //res.json(req.body.template);
+    res.json(result);
     //res.json({message: "it worked", data: req.body});
     //res.send({message: "it worked", data: req.body});
     });

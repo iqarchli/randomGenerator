@@ -1,5 +1,5 @@
 'use strict';
 
 // Define the `testList` module
-angular.module('jsonList', ['ngRoute','core.phone']);
+angular.module('jsonList', ['ngRoute','core.phone','ngclipboard']);
 
