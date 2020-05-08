@@ -15,6 +15,7 @@
   "author": "ismail qarcli",
   "license": "ISC",
   "dependencies": {
+    "angular-file-saver": "^1.1.3",
     "dummy-json": "^2.0.0",
     "express": "^4.17.1",
     "ngclipboard": "^2.0.0",

@@ -10,7 +10,9 @@
           function jsonListController($http,$scope,$timeout) {
              
           var vm = this;
-          vm.testvar = 3;
+          vm.depth =5 ;
+              
+              debugger;
           vm.template = "";
           vm.copied = false; 
           vm.copy = true; 
@@ -20,14 +22,20 @@
             vm.copy = false; 
             $timeout(callAtTimeout, 1000);
            };
+            
           function callAtTimeout (){
              vm.copied = false; 
              vm.copy = true;
           };
+        
+            vm.updatedepth = function updatedepth(){
+                debugger;
+                vm.repeat = vm.depth;
+            };
               
           vm.template1 = `{
             "students": [
-                {{#repeat `+vm.testvar+`}}
+                {{#repeat `+vm.depth+`}}
                 {
                   "id": {{@index}},
                   "student_ID": {{int 10  100}}{{int 500  600}},
@@ -44,7 +52,7 @@
 } `;
                  vm.template2 = `{
             "Users": [
-                {{#repeat `+vm.testvar+`}}
+                {{#repeat `+vm.depth+`}}
                 {
                   "id": {{@index}},
                   "user_ID": {{int 500  600}}{{int 10  100}},
@@ -65,7 +73,7 @@
 } `;
                  vm.template3 = `{
             "thirdtemplate": [
-                {{#repeat `+vm.testvar+`}}
+                {{#repeat `+vm.depth+`}}
                 {
                   "id": {{@index}},
                   "student_ID": {{int 10  100}}{{int 500  600}},
@@ -86,6 +94,7 @@
 } `;
               
            vm.loadstudenttemp = function loadstudenttemp() {
+               //vm.repeat = vm.depth;
                vm.template = vm.template1;
            }
            vm.loaduserstemp = function loaduserstemp() {
