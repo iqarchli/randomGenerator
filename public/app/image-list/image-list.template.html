@@ -1,0 +1,70 @@
+
+   <!-- <div class="col-md-10">
+
+
+<button id="button_add" class="btn btn-default" ng-click="$ctrl.rand($ctrl.test)">Add</button>
+   
+    
+    <input type="text" ng-model="$ctrl.test">
+        
+    <h3>{{$ctrl.result}}</h3>
+    
+   
+
+    </div> -->
+<!-- this can be used as a layout for the sub page -->
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">Image Generator</li>
+    </ol>
+ <h3>Generation Parameters</h3>
+    <div class="form">
+      <form class="needs-validation" novalidate="">
+        <div class="row">
+          <div class="col-md-5 mb-3">
+            <select class="custom-select d-block w-100" ng-model="$ctrl.selectedName" ng-options="item.name for item in $ctrl.options track by item.id" >
+              <option value="" disabled >Pick a Size...</option>
+              </select>
+            <div class="invalid-feedback">
+              Please select a valid country.
+            </div>
+          </div>
+            <div class="col-md-4 mb-3">
+            <button class="btn btn-success" ng-click="$ctrl.randomize()">Randomize</button>
+            </div>
+      <!--    <div class="col-md-4 mb-3">
+            <label for="state">State</label>
+            <select class="custom-select d-block w-100" id="state" required="">
+              <option value="">Choose...</option>
+              <option>California</option>
+            </select>
+            <div class="invalid-feedback">
+              Please provide a valid state.
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="zip">Zip</label>
+            <input type="text" class="form-control" id="zip" placeholder="" required="">
+            <div class="invalid-feedback">
+              Zip code required.
+            </div>
+          </div>-->
+        </div>
+        
+        <hr class="mb-4">
+        <div class="col-lg-12 col-md-12" >
+          <img ng-src="{{$ctrl.imageLink}}" title="{{$ctrl.title}}" ng-alt="{{$ctrl.title}}"> 
+        </div>
+          
+        
+      </form>
+    
+          
+     
+          
+  
+    
+    
+    
+    
+
+

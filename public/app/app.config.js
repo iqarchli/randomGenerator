@@ -20,11 +20,14 @@ angular.
        when('/number', {
           template: '<number-list></number-list>'
         }).
-       when('/string/', {
+       when('/string', {
           template: '<string-list></string-list>'
         }).
         when('/phones/:phoneId', {
           template: '<phone-detail></phone-detail>'
+        }).
+        when('/image', {
+          template: '<image-list></image-list>'
         }).
         otherwise('/test');
     }

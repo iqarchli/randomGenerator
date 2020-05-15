@@ -10,5 +10,6 @@ angular.module('phonecatApp', [
   'jsonList',
   'csvList',
   'stringList',
+  'imageList',
   'numberList'
 ]);
