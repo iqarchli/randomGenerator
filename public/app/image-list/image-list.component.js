@@ -28,6 +28,12 @@
                // this callback will be called asynchronously when the response is available
                 vm.result = response.data;
                 vm.title = vm.result.location.title;
+               if(vm.selectedName === undefined){
+                  vm.selectedName = 
+                  {name:'small', id:3}
+                ;
+                   
+               }
               debugger;
                 switch(vm.selectedName.id){ 
                 case 1: //Full
