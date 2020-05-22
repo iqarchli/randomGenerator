@@ -105,6 +105,7 @@
            }
           vm.randomize = function randomize() {
             //vm.template = JSON.stringify(vm.template);
+            
             var request = JSON.stringify({type:"user", username:"ismail", template:vm.template}); 
             
         
