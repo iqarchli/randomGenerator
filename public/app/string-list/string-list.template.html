@@ -17,64 +17,44 @@
         <li class="breadcrumb-item active">String Input Generator</li>
     </ol>
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-12">
             <div class=" border-0 rounded-lg mt-6">
                 <h3>Generation Parameters</h3>
                 <div class="justify-content-center">
                     <form>
                         <div class="form-row">
                             <div class="col-md-6">
-                                <div class="form-group"><label class="small mb-1" for="">String  Length</label><input on-click="" class="form-control py-4" id="strlen" type="text" placeholder="How long should the string be" /></div>
+                                <div class="form-group"><label class="small mb-1" for="">String  Length</label><input on-click="" class="form-control py-4" id="strlen" ng-model="$ctrl.strlen" type="text" placeholder="How long should the string be (10 by default)" /></div>
                             </div>
                             <div class="col-md-6">
                                 <label class="small mb-1" for="">String Options</label><br>
-                                    <div class="form-group">
-                                      <select class="form-control py-4" ng-model="$ctrl.strOpt" ng-change="$ctrl.setTest()" ng-options="item.name for item in $ctrl.options track by item.id">
-                                        </select>
+                                    <div class="form-group ">
+                                        <select class="custom-select d-block w-100 " ng-model="$ctrl.selectedName" ng-change="$ctrl.setactive()" ng-options="item.name for item in $ctrl.options track by item.id" >
+                                            <option value="" disabled >Pick a Size...</option>
+                                            </select>
+                                        
+                                    </select>
                                       
                                     </div>
+                                    
                             </div>
+                            
                              <div class="col-md-6">
                                 <div class="form-group">
                                     
                                     <label class="small mb-1" for="">Number of results</label>
-                                    <input class="form-control py-4" id="" type="text" placeholder="Number of results " />
+                                    <input class="form-control py-4" id="" type="text" placeholder="Number of results " ng-disabled="!$ctrl.disChar" ng-model="$ctrl.numOfRes" />
                                  </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="small mb-1" for="">Characters to use</label><textarea class="form-group form-control mt-1 mb-0 col-md-12" rows="5" placeholder="Alphabet ..." ng-disabled="$ctrl.disChar" ng-model ="$ctrl.alpha" ng-change="$ctrl.setTest()"></textarea>
+                                    <label class="small mb-1" for="">Regular Expression</label>
+                                    <input on-click="" class="form-control py-4" id="strlen" type="text" placeholder="Regular Expression ..."ng-disabled="$ctrl.disChar" ng-model ="$ctrl.template"/>
+                                    
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-group col-md-6 mt-4 mb-0"><a class="btn btn-primary btn-block" href="">Randomize</a></div>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class=" border-0 rounded-lg mt-6">
-                <h3>Randamization Options</h3>
-                <div class="justify-content-center">
-                    <form>
-                        <div class="form-row">
-                            
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                 <label class="small mb-1" for="">Type of randomness</label> <br>
-                                <div class="form-check form-check-inline col-md-6">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                  <label class="form-check-label" for="inlineCheckbox1">Pseudo Random</label>
-                                </div>
-                                <div class="form-check form-check-inline col-md-6">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                                  <label class="form-check-label" for="inlineCheckbox2">Pure Random</label>
-                                </div>
-                                </div>
-                            </div>
-                             
-                            
+                            <button class="btn btn-success mt-4 mb-1 " ng-click="$ctrl.randomize()">Randomize</button>
+                           
                         </div>
                         
                     </form>
@@ -86,7 +66,7 @@
         <div class="col-lg-12">
          <div class="justify-content-center">
                     <form>
-                        <textarea class="form-group mt-4 mb-0 col-md-12" rows="10" placeholder="Output..."></textarea>
+                        <textarea class="form-control form-group mt-4 mb-1 col-md-12 " placeholder="Output..." style="background-color: beige;" rows="15" ng-model="$ctrl.result"></textarea>
                     </form>
                 </div>
         </div>

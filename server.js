@@ -6,6 +6,7 @@ var server = require("http");
 var path = require('path');
 var dummyjson = require('dummy-json');
 var router = express.Router();
+const RandExp = require('randexp');
 
 app.use(express.static(path.join(__dirname,'/public')));
 
@@ -43,4 +44,16 @@ app.post('/app/jsonList',function(req,res){
     //res.json({message: "it worked", data: req.body});
     //res.send({message: "it worked", data: req.body});
     });
+
+
+    app.post('/app/stringList',function(req,res){
+        res.set('Content-Type', 'application/json');
+        var template = req.body.template;
+        var result =  new RandExp(template).gen();
+        res.json(result);
+        //res.json({message: "it worked", data: req.body});
+        //res.send({message: "it worked", data: req.body});
+        });
+
+   
 

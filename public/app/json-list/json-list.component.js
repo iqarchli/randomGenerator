@@ -11,8 +11,6 @@
              
           var vm = this;
           vm.depth =5 ;
-              
-              debugger;
           vm.template = "";
           vm.copied = false; 
           vm.copy = true; 
@@ -92,7 +90,35 @@
                 "y": {{float -25 25 '0.00'}}
               }
 } `;
-              
+          vm.alertt = function alertt (){
+            Swal.fire({
+              title: 'Info!',
+              html:
+            '<p style="text-align:justify;">'+
+            'This is a utility that allows you to generate random JSON data. It comes with a built-in collection of Handlebars helpers that return common data values, such as names, numbers, dates.<br>' +
+            '<b>Available Helpers</b><br>' +
+            '<i><b>Repeat </b>{{#repeat count [comma=true]}} ... {{/repeat}} </i> <br>'+
+            '• count The number of times to repeat the content (required) <br>'+
+            '• comma Adds or removes the separating comma between blocks of content (optional, default is true)  <br>'+
+            '<i><b>Integer </b>{{int min max [format] [round=1]}}</i><br>' +
+            '• min Minimum value (required)<br>'+
+            '• max Maximum value (required)<br>'+
+            '• format Formatting string (optional, default is null)<br>'+
+            '• round Rounds to the nearest multiple of the given value (optional, default is null - no rounding)<br>'+
+            '<i><b>Float </b>{{float min max [format] [round=1]}}</i><br>' +
+            '• min Minimum value (required)<br>'+
+            '• max Maximum value (required)<br>'+
+            '• format Formatting string (optional, default is null)<br>'+
+            '• round Rounds to the nearest multiple of the given value (optional, default is null - no rounding)<br>'+
+            '<i><b>Date </b>{{date  min max [format]</i><br>' +
+            '• min Minimum value (required)<br>'+
+            '• max Maximum value (required)<br>'+
+            '• format Formatting string (optional, default is null)<br></p>',
+            
+              icon: 'info',
+              confirmButtonText: 'Got it!'
+            })
+          }
            vm.loadstudenttemp = function loadstudenttemp() {
                //vm.repeat = vm.depth;
                vm.template = vm.template1;
@@ -103,12 +129,13 @@
            vm.loadthirdtemp = function loadthirdtemp() {
                vm.template = vm.template3;
            }
+           //vm.telokat
           vm.randomize = function randomize() {
             //vm.template = JSON.stringify(vm.template);
             
             var request = JSON.stringify({type:"user", username:"ismail", template:vm.template}); 
             
-        
+            
             $http(
             {
                method: 'POST',

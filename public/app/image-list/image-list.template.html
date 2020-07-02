@@ -24,30 +24,12 @@
             <select class="custom-select d-block w-100" ng-model="$ctrl.selectedName" ng-options="item.name for item in $ctrl.options track by item.id" >
               <option value="" disabled >Pick a Size...</option>
               </select>
-            <div class="invalid-feedback">
-              Please select a valid country.
-            </div>
+            
           </div>
             <div class="col-md-4 mb-3">
             <button class="btn btn-success" ng-click="$ctrl.randomize(item)">Randomize</button>
             </div>
-      <!--    <div class="col-md-4 mb-3">
-            <label for="state">State</label>
-            <select class="custom-select d-block w-100" id="state" required="">
-              <option value="">Choose...</option>
-              <option>California</option>
-            </select>
-            <div class="invalid-feedback">
-              Please provide a valid state.
-            </div>
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="zip">Zip</label>
-            <input type="text" class="form-control" id="zip" placeholder="" required="">
-            <div class="invalid-feedback">
-              Zip code required.
-            </div>
-          </div>-->
+    
         </div>
         <hr class="mb-4">
         <a download class="col-lg-12 col-md-12" href="{{$ctrl.imageLink}}" download>

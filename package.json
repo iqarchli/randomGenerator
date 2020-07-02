@@ -19,6 +19,8 @@
     "dummy-json": "^2.0.0",
     "express": "^4.17.1",
     "ngclipboard": "^2.0.0",
-    "nodemon": "^2.0.3"
+    "nodemon": "^2.0.3",
+    "randexp": "^0.5.3",
+    "sweetalert2": "^9.15.2"
   }
 }
