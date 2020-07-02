@@ -26,7 +26,7 @@
             //vm.strOpt = 1;
            vm.setactive = function setactive() {
              debugger;
-            if(vm.selectedName.id == 6)
+            if(vm.selectedName.id == 7)
                 vm.disChar = false;
             else
                 vm.disChar = true;
@@ -34,10 +34,15 @@
            vm.randomize = function randomize() {
             
              if (vm.strlen == undefined)
-             vm.strlen=10;
+             vm.strlen=10;debugger;
+             if(vm.selectedName === undefined){
+              vm.selectedName = 
+              {name:'Lower Case', id:1}
+            ;
+           }
             switch(vm.selectedName.id){ 
               case 1: //lower Case
-              vm.template = "[a-z]{"+vm.strlen+"}";
+              vm.template = "([a-z]{"+vm.strlen+"}\n){"+vm.numOfRes+"}";
               var request = JSON.stringify({type:"user", username:"ismail", template:vm.template}); 
               $http(
               {
@@ -54,7 +59,7 @@
               });
               break;
               case 2: //Upper Case
-              vm.template = "[A-Z]{"+vm.strlen+"}";
+              vm.template = "([A-Z]{"+vm.strlen+"}\n){"+vm.numOfRes+"}";
               var request = JSON.stringify({type:"user", username:"ismail", template:vm.template}); 
               $http(
               {
@@ -72,7 +77,7 @@
               });
               break; 
               case 3://Lower Case and numbers
-              vm.template = "[a-z0-9]{"+vm.strlen+"}";
+              vm.template = "([a-z0-9]{"+vm.strlen+"}\n){"+vm.numOfRes+"}";
               var request = JSON.stringify({type:"user", username:"ismail", template:vm.template}); 
               $http(
               {
@@ -90,7 +95,7 @@
               });
               break;
               case 4://All letters and numbers
-              vm.template = "[a-zA-Z0-9]{"+vm.strlen+"}";
+              vm.template = "([a-zA-Z0-9]{"+vm.strlen+"}\n){"+vm.numOfRes+"}";
               var request = JSON.stringify({type:"user", username:"ismail", template:vm.template}); 
               $http(
               {
@@ -108,7 +113,7 @@
               });
               break;
               case 5://All leters
-              vm.template = "[a-zA-Z]{"+vm.strlen+"}";
+              vm.template = "([a-zA-Z]{"+vm.strlen+"}\n){"+vm.numOfRes+"}";
               var request = JSON.stringify({type:"user", username:"ismail", template:vm.template}); 
               $http(
               {
@@ -126,7 +131,7 @@
               });
               break;
               case 6://digits 
-              vm.template = "[0-9]{"+vm.strlen+"}";
+              vm.template = "([0-9]{"+vm.strlen+"}\n){"+vm.numOfRes+"}";
               var request = JSON.stringify({type:"user", username:"ismail", template:vm.template}); 
               $http(
               {
@@ -144,7 +149,7 @@
               });
               break;
               case 7://Digits
-              vm.template = "[1-9]{"+vm.strlen+"}";
+              vm.template = vm.template;
               var request = JSON.stringify({type:"user", username:"ismail", template:vm.template}); 
               $http(
               {
