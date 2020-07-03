@@ -12,7 +12,6 @@
             vm.strlen =10;
             vm.numOfRes =10;
             vm.disChar = true;
-           
             vm.options = [
               {name:'Lower Case', id:1},
               {name:'Upper Case', id:2},
@@ -31,8 +30,75 @@
             else
                 vm.disChar = true;
            };
-           vm.randomize = function randomize() {
+
+
+           vm.alertt = function alertt (){
+            Swal.fire({
+              title: 'Regular Expressions!',
+              html:
+            '<p style="text-align:justify;">'+
+            'This is a utility that allows you to generate random data based on Regular Expressions.<br>' +
+            '<b>Basics</b><br>' +
+            'A regular expression is a sequence of characters that define a search pattern.<br>'+
             
+            '<table class="table">'+
+              '<thead>'+
+              '<tr>'+
+              '<th scope="col">#</th>'+
+              '<th scope="col">Expression</th>'+
+              '<th scope="col">Example</th>'+
+              '<th scope="col">Potential Output</th>'+
+              '</tr>'+
+              '</thead>'+
+              '<tbody>'+
+              '<tr>'+
+              '<th scope="row">1</th>'+
+              '<td>"or" |</td>'+
+              '<td>gray|grey</td>'+
+              '<td>"gray" or "grey"</td>'+
+              '</tr>'+
+              '<tr>'+
+              '<th scope="row">2</th>'+
+              '<td>Jacob</td>'+
+              '<td>Thornton</td>'+
+              '<td>@fat</td>'+
+              '</tr>'+
+              '<tr>'+
+              '<th scope="row">3</th>'+
+              '<td>Larry</td>'+
+              '<td>the Bird</td>'+
+              '<td>@twitter</td>'+
+              '</tr>'+
+              '</tbody>'+
+              '</table>'+
+            
+            
+            
+            
+            
+            
+            '<b>Boolean "or"</b><br>'+
+            'A vertical bar separates alternatives. For example, gray|grey can match "gray" or "grey".<br>'+
+            '<b>Grouping</b><br>'+
+            '<b>?</b>: The question mark indicates zero or one occurrences of the preceding element. For example, colou?r matches both "color" and "colour".<br>'+
+            '<b>*</b>: The asterisk indicates zero or more occurrences of the preceding element. For example, ab*c matches "ac", "abc", "abbc", "abbbc", and so on.<br>'+
+            '<b>+</b>: The plus sign indicates one or more occurrences of the preceding element. For example, ab+c matches "abc", "abbc", "abbbc", and so on, but not "ac".<br>'+
+            '<b>*</b>: The asterisk indicates zero or more occurrences of the preceding element. For example, ab*c matches "ac", "abc", "abbc", "abbbc", and so on.<br>',
+            
+              icon: 'question',
+              confirmButtonText: 'Got it!'
+            })
+          }
+
+
+           //Randomize button action
+           vm.randomize = function randomize() {
+             debugger;
+             if (vm.valueCheckRandLen == true)
+             vm.strlen = Math.floor(Math.random() * 20)+1; 
+             if (vm.valueCheckRandRes == true)
+             vm.numOfRes = Math.floor(Math.random() * 10000)+1; 
+
              if (vm.strlen == undefined)
              vm.strlen=10;debugger;
              if(vm.selectedName === undefined){
@@ -40,6 +106,7 @@
               {name:'Lower Case', id:1}
             ;
            }
+           if (vm.numOfRes<=10000){
             switch(vm.selectedName.id){ 
               case 1: //lower Case
               vm.template = "([a-z]{"+vm.strlen+"}\n){"+vm.numOfRes+"}";
@@ -169,6 +236,7 @@
               default: //Lower Case
             
               }
+            }else vm.showWarning = true;
 
 
  }; 

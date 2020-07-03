@@ -50,7 +50,7 @@ app.post('/app/jsonList',function(req,res){
         res.set('Content-Type', 'application/json');
         var template = req.body.template;
         var result =  new RandExp(template).gen();
-        res.json(result);
+        res.json(result);   
         //res.json({message: "it worked", data: req.body});
         //res.send({message: "it worked", data: req.body});
         });
