@@ -6,15 +6,18 @@
       module('jsonList').
       component('jsonList', {
         templateUrl: 'app/json-list/json-list.template.html',
-        controller: ['$http', '$scope','$timeout',
-          function jsonListController($http,$scope,$timeout) {
+        controller: ['$http', '$scope','$timeout','$window',
+          function jsonListController($http,$scope,$timeout,$window) {
              
           var vm = this;
           vm.depth =5 ;
           vm.template = "";
           vm.copied = false; 
           vm.copy = true; 
-              
+          vm.enableDown=true;
+
+          
+
           vm.test = function test() {
             vm.copied = true; 
             vm.copy = false; 
@@ -131,11 +134,7 @@
            }
            //vm.telokat
           vm.randomize = function randomize() {
-            //vm.template = JSON.stringify(vm.template);
-            
             var request = JSON.stringify({type:"user", username:"ismail", template:vm.template}); 
-            
-            
             $http(
             {
                method: 'POST',
@@ -145,7 +144,12 @@
                // this callback will be called asynchronously when the response is available
                 //console.log(response);
                 //vm.template = JSON.stringify(response);
+                vm.enableDown=false;
                 vm.result = response.data;
+                var data = vm.result,
+                blob = new Blob([vm.result], { type: 'text/plain' }),
+                url = $window.URL || $window.webkitURL;
+                vm.fileUrl = url.createObjectURL(blob);
 
             }, function errorCallback(response) {
                // called asynchronously if an error occurs

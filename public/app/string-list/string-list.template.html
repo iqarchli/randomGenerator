@@ -1,17 +1,3 @@
-
-   <!-- <div class="col-md-10">
-
-
-<button id="button_add" class="btn btn-default" ng-click="$ctrl.rand($ctrl.test)">Add</button>
-   
-    
-    <input type="text" ng-model="$ctrl.test">
-        
-    <h3>{{$ctrl.result}}</h3>
-    
-   
-
-    </div> -->
 <!-- this can be used as a layout for the sub page -->
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item active">String Input Generator</li>
@@ -40,11 +26,11 @@
                         </div>
                         <div class="form-row">
                             <div class="col-md-6">
-                                <div class="form-group"><label class="small mb-1" for="">String  Length </label><span class="badge badge-danger" ng-show="$ctrl.strlen>20"> Maximum 20</span>
+                                <div class="form-group"><label class="small mb-1" for="">String  Length </label><span class="badge badge-danger" ng-if="$ctrl.strlen>20"> Maximum 20</span>
                                     <input on-click="" class="form-control py-4" id="strlen" ng-model="$ctrl.strlen" type="text" placeholder="How long should the string be (10 by default)" ng-disabled="$ctrl.valueCheckRandLen || !$ctrl.disChar"/></div>
                             </div>
                             <div class="col-md-6">
-                                <label class="small mb-1" for="">Number of results <span class="badge badge-danger" ng-show="$ctrl.numOfRes>10000">Maximum 10.000</span></label>
+                                <label class="small mb-1" for="">Number of results <span class="badge badge-danger" ng-if="$ctrl.numOfRes>10000">Maximum 10.000</span></label>
                                 <input class="form-control py-4" id="" type="text" placeholder="Number of results " ng-disabled="$ctrl.valueCheckRandRes || !$ctrl.disChar" ng-disabled="!$ctrl.disChar" ng-model="$ctrl.numOfRes" />
                                 
                             </div>
@@ -67,22 +53,22 @@
                                     
                                 </div>
                             </div>
+                            <div class="col-md-6 col-lg-6">
                             <button class="btn btn-success mt-4 mb-1 " ng-click="$ctrl.randomize()" type="submit" ng-disabled="$ctrl.numOfRes>10000 || $ctrl.strlen>20">Randomize</button>
-                           
+                            </div>
                         </div>
-                        
                     </form>
                 </div>
-
             </div>
         </div>
-        
         <div class="col-lg-12">
-         <div class="justify-content-center">
-                    <form>
-                        <textarea class="form-control form-group mt-4 mb-1 col-md-12 " placeholder="Output..." style="background-color: beige;" rows="15" ng-model="$ctrl.result"></textarea>
-                    </form>
-                </div>
+        <form>
+        <textarea id="foo" class="form-control form-group mt-4 mb-1 col-md-12 " placeholder="Output..." style="background-color: beige;" rows="15" ng-model="$ctrl.result"></textarea>
+        </form>
+        <button class="btn btn-primary mt-4 mb-1 " ng-disabled="$ctrl.enableDown" ng-click="$ctrl.download()"><a ng-href="{{ $ctrl.fileUrl }}" download="file.txt" style="color:white">download as .txt file</a></button>
+        <button class="btn btn-info mt-4 mb-1" ng-click="$ctrl.test()" ngclipboard data-clipboard-target="#foo" data-toggle="tooltip" data-placement="top" title="Copy to Clipboard"><i class="fas fa-clipboard"></i>&nbsp;
+        <small class="" ng-if="$ctrl.copy">Copy to ClipBoard</small><small ng-if="$ctrl.copied">Copied</small></button>
+        </div>
         </div>
     </div>
            

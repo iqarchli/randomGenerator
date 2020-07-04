@@ -2,8 +2,8 @@
 
 angular.
   module('phonecatApp').
-  config(['$routeProvider',
-    function config($routeProvider) {
+  config(['$routeProvider', '$compileProvider',
+    function config($routeProvider, $compileProvider) {
       $routeProvider.
         when('/phones', {
           template: '<phone-list></phone-list>'
@@ -30,5 +30,8 @@ angular.
           template: '<image-list></image-list>'
         }).
         otherwise('/test');
+        $compileProvider.
+        aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|tel|file|blob):/);
+
     }
   ]);

@@ -1,17 +1,30 @@
     'use strict';
-    /* */
-    /* */
     // Register `testList` component, along with its associated controller and template
     angular.
       module('stringList').
       component('stringList', {
         templateUrl: 'app/string-list/string-list.template.html',
-        controller: ['$http', '$scope',
-          function stringListController($http,$scope) {
+        controller: ['$http', '$scope','$timeout','$window',
+          function stringListController($http,$scope,$timeout,$window) {
             var vm = this;
             vm.strlen =10;
             vm.numOfRes =10;
             vm.disChar = true;
+            vm.copied = false; 
+            vm.copy = true; 
+                
+            vm.test = function test() {
+              vm.copied = true; 
+              vm.copy = false; 
+              $timeout(callAtTimeout, 1000);
+             };
+              
+            function callAtTimeout (){
+              
+               vm.copied = false; 
+               vm.copy = true;
+            };
+             
             vm.options = [
               {name:'Lower Case', id:1},
               {name:'Upper Case', id:2},
@@ -24,13 +37,14 @@
             
             //vm.strOpt = 1;
            vm.setactive = function setactive() {
-             debugger;
+             
             if(vm.selectedName.id == 7)
                 vm.disChar = false;
             else
                 vm.disChar = true;
            };
 
+           
 
            vm.alertt = function alertt (){
             Swal.fire({
@@ -59,9 +73,9 @@
               '</tr>'+
               '<tr>'+
               '<th scope="row">2</th>'+
-              '<td>Jacob</td>'+
-              '<td>Thornton</td>'+
-              '<td>@fat</td>'+
+              '<td>Plus sign + </td>'+
+              '<td>The plus sign indicates one or more occurrences of the preceding element.</td>'+
+              '<td></td>'+
               '</tr>'+
               '<tr>'+
               '<th scope="row">3</th>'+
@@ -71,12 +85,6 @@
               '</tr>'+
               '</tbody>'+
               '</table>'+
-            
-            
-            
-            
-            
-            
             '<b>Boolean "or"</b><br>'+
             'A vertical bar separates alternatives. For example, gray|grey can match "gray" or "grey".<br>'+
             '<b>Grouping</b><br>'+
@@ -90,21 +98,26 @@
             })
           }
 
+          vm.download = function download(){
+            var data = vm.result,
+            blob = new Blob([vm.result], { type: 'text/plain' }),
+            url = $window.URL || $window.webkitURL;
+            vm.fileUrl = url.createObjectURL(blob);
+          }
 
            //Randomize button action
            vm.randomize = function randomize() {
-             debugger;
              if (vm.valueCheckRandLen == true)
              vm.strlen = Math.floor(Math.random() * 20)+1; 
              if (vm.valueCheckRandRes == true)
              vm.numOfRes = Math.floor(Math.random() * 10000)+1; 
 
              if (vm.strlen == undefined)
-             vm.strlen=10;debugger;
+             vm.strlen=10;
              if(vm.selectedName === undefined){
               vm.selectedName = 
-              {name:'Lower Case', id:1}
-            ;
+              {name:'Lower Case', id:1};
+              
            }
            if (vm.numOfRes<=10000){
             switch(vm.selectedName.id){ 
@@ -119,6 +132,8 @@
               }).then(function successCallback(response) {
                // this callback will be called asynchronously when the response is available
                 vm.result = response.data;
+                vm.download();
+                
               }, function errorCallback(response) {
                // called asynchronously if an error occurs
                // or server returns response with an error status.
@@ -136,6 +151,7 @@
               }).then(function successCallback(response) {
                // this callback will be called asynchronously when the response is available
                 vm.result = response.data;
+                vm.download();
 
               }, function errorCallback(response) {
                // called asynchronously if an error occurs
@@ -154,6 +170,7 @@
               }).then(function successCallback(response) {
                // this callback will be called asynchronously when the response is available
                 vm.result = response.data;
+                vm.download();
 
               }, function errorCallback(response) {
                // called asynchronously if an error occurs
@@ -172,6 +189,7 @@
               }).then(function successCallback(response) {
                // this callback will be called asynchronously when the response is available
                 vm.result = response.data;
+                vm.download();
 
               }, function errorCallback(response) {
                // called asynchronously if an error occurs
@@ -190,6 +208,7 @@
               }).then(function successCallback(response) {
                // this callback will be called asynchronously when the response is available
                 vm.result = response.data;
+                vm.download();
 
               }, function errorCallback(response) {
                // called asynchronously if an error occurs
@@ -208,6 +227,7 @@
               }).then(function successCallback(response) {
                // this callback will be called asynchronously when the response is available
                 vm.result = response.data;
+                vm.download();
 
               }, function errorCallback(response) {
                // called asynchronously if an error occurs
@@ -226,6 +246,7 @@
               }).then(function successCallback(response) {
                // this callback will be called asynchronously when the response is available
                 vm.result = response.data;
+                vm.download();
 
               }, function errorCallback(response) {
                // called asynchronously if an error occurs
