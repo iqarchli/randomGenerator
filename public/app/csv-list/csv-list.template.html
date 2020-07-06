@@ -1,100 +1,50 @@
 
-   <!-- <div class="col-md-10">
-
-
-<button id="button_add" class="btn btn-default" ng-click="$ctrl.rand($ctrl.test)">Add</button>
-   
-    
-    <input type="text" ng-model="$ctrl.test">
-        
-    <h3>{{$ctrl.result}}</h3>
-    
-   
-
-    </div> -->
 <!-- this can be used as a layout for the sub page -->
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item active">CSV Input Generator</li>
     </ol>
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-12">
             <div class=" border-0 rounded-lg mt-6">
                 <h3>Generation Parameters</h3>
                 <div class="justify-content-center">
                     <form>
                         <div class="form-row">
                             <div class="col-md-6">
-                                <div class="form-group"><label class="small mb-1" for="">CSV  Depth</label><input class="form-control py-4" id="depth" type="text" placeholder="Number of rows to generate" /></div>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="small mb-1" for="">String Options</label> <br>
-                                    <div class="form-check form-check-inline col-md-12">
-                                      <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
-                                      <label class="form-check-label" for="inlineCheckbox5">Random English words</label>
-                                      
-                                    </div>
-                                    <div class="form-check form-check-inline col-md-12">
-                                      <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
-                                      <label class="form-check-label" for="inlineCheckbox6">Random strings</label>
-                                    </div>
-                            </div>
-                             <div class="col-md-6">
-                                <div class="form-group"><label class="small mb-1" for="">CSV columns</label><input class="form-control py-4" id="" type="text" placeholder="number of columns" />
-                                 
-                                    
-                                    <label class="small mb-1" for="">CSV Delimiter</label><input class="form-control py-4" id="" type="text" placeholder="Pick a delimiter" />
+                                <div class="form-group">
+                                    <label class="small mb-1" for="">CSV  Depth</label>
+                                    <input ng-model="$ctrl.rows" class="form-control py-4" id="depth" type="text" placeholder="Number of rows to generate" /></div>
+                       
+                                <div class="form-group"><label class="small mb-1" for="">CSV columns</label><input ng-model="$ctrl.cols" class="form-control py-4" id="" type="text" placeholder="number of columns" />
+                                    <label class="small mb-1" for="">CSV Delimiter</label><input class="form-control py-4" id="" type="text" placeholder="Pick a delimiter" ng-model ="$ctrl.delimiter" />
                                  </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="small mb-1" for="">Maximum String Length</label><input class="form-control py-4" id="" type="text" placeholder="How long should the random string be?" />
-                                    <label class="small mb-1" for="">Characters to use</label><textarea class="form-control form-group col-md-12" rows="5" placeholder="Alphabet ..."></textarea>
+                                    <label class="small mb-1" for="">String Length (or specify the range min,max)</label><input class="form-control py-4" id="" type="text" ng-model="$ctrl.strlen" placeholder="How long should the random string be?" />
+                                </div> <div class="form-group"> <label class="small mb-1" for="">Characters to use</label><textarea class="form-control form-group col-md-12" rows="5" placeholder="Alphabet ..." ng-model="$ctrl.alphabet"></textarea>
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-group col-md-6 mt-4 mb-0"><a class="btn btn-primary btn-block" href="">Randomize</a></div>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class=" border-0 rounded-lg mt-6">
-                <h3>Randamization Options</h3>
-                <div class="justify-content-center">
-                    <form>
-                        <div class="form-row">
-                            
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                 <label class="small mb-1" for="">Type of randomness</label> <br>
-                                <div class="form-check form-check-inline col-md-6">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                  <label class="form-check-label" for="inlineCheckbox1">Pseudo Random</label>
-                                </div>
-                                <div class="form-check form-check-inline col-md-6">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                                  <label class="form-check-label" for="inlineCheckbox2">Pure Random</label>
-                                </div>
-                                </div>
-                            </div>
-                             
-                            
-                        </div>
                         
+                        <div class="col-md-6 col-lg-6">
+                            <button class="btn btn-success mb-1 " ng-click="$ctrl.randomize()" type="submit" ng-disabled="$ctrl.numOfRes>10000 || $ctrl.strlen>20">Randomize</button>
+                        </div>
+                    </div>
                     </form>
                 </div>
 
             </div>
         </div>
+       
         
         <div class="col-lg-12">
          <div class="justify-content-center">
                     <form>
-                        <textarea class="form-control form-group col-md-12 form-group mt-4 mb-0 col-md-12" rows="10" placeholder="Output..."></textarea>
+                        <textarea style="background-color: beige;" rows="15" class="form-control form-group col-md-12 form-group mt-4 mb-0 col-md-12" placeholder="Output..." ng-model="$ctrl.result"></textarea>
                     </form>
                 </div>
-        </div>
+        <button class="btn btn-primary mt-4 mb-1 " ng-disabled="$ctrl.enableDown" ng-click="$ctrl.download()"><a ng-href="{{ $ctrl.fileUrl }}" download="file.csv" style="color:white">download as .csv file</a></button>
+    </div>
     </div>
            
      
