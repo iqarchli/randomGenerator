@@ -1,5 +1,4 @@
 # randomGenerator
-random input generator
 The incessant changes in the software requirements, the continuous shrinks in schedule and resources have driven the rise of state-of-the-art processes that would eventually 
 simplify the development and delivery of software. We mean by these procedures the set of universal repeatable solutions followed either to overcome certain puzzling topics 
 in the field of software engineering, or to ease the overall process of developing business applications. Among these practices, we state agile methodologies, that came as 
