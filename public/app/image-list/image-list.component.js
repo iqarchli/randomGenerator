@@ -15,39 +15,35 @@
               {name:'Full', id:1},
               {name:'Regular', id:2},
               {name:'Small', id:3},
-              {name:'Thumnail', id:4}
+              {name:'Thumbnail', id:4}
             ];
             
           vm.randomize = function randomize(){
           $http(
             {
-               method: 'GET',
-               url: 'https://api.unsplash.com/photos/random/?client_id=3jcXXj-wfS4NqtE9AFSaWTGcQF5VRgq4HKdY9SNYLig'  /*URL to post*/
-              // data: request  /*You data object/class to post*/
+            method: 'GET',
+            url: 'https://api.unsplash.com/photos/random/?client_id=3jcXXj-wfS4NqtE9AFSaWTGcQF5VRgq4HKdY9SNYLig'  /*URL to post*/
+            // data: request  /*You data object/class to post*/
             }).then(function successCallback(response) {
-               // this callback will be called asynchronously when the response is available
-                vm.result = response.data;
-                vm.title = vm.result.location.title;
-               if(vm.selectedName === undefined){
-                  vm.selectedName = 
-                  {name:'small', id:3}
-                ;
-                   
-               }
-              debugger;
-                switch(vm.selectedName.id){ 
-                case 1: //Full
-                vm.imageLink = vm.result.urls.full;
-                break;
-                case 2: //Regular
-                vm.imageLink = vm.result.urls.regular;  
-                break; 
-                case 3://Small
-                vm.imageLink = vm.result.urls.small;
-                break;
-                default: //Small
-                vm.imageLink = vm.result.urls.small;
-                }
+            // this callback will be called asynchronously when the response is available
+            vm.result = response.data;
+            vm.title = vm.result.location.title;
+            if(vm.selectedName === undefined){
+            vm.selectedName = {name:'small', id:3};
+            }
+            switch(vm.selectedName.id){ 
+            case 1: //Full
+            vm.imageLink = vm.result.urls.full;
+            break;
+            case 2: //Regular
+            vm.imageLink = vm.result.urls.regular;  
+            break; 
+            case 3://Small
+            vm.imageLink = vm.result.urls.small;
+            break;
+            default: //Small
+            vm.imageLink = vm.result.urls.small;
+            }
             }, function errorCallback(response) {
                // called asynchronously if an error occurs
                // or server returns response with an error status.

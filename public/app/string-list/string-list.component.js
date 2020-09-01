@@ -119,7 +119,7 @@
               {name:'Lower Case', id:1};
               
            }
-           if (vm.numOfRes<=10000){
+           if (vm.numOfRes<=100000){
             switch(vm.selectedName.id){ 
               case 1: //lower Case
               vm.template = "([a-z]{"+vm.strlen+"}\n){"+vm.numOfRes+"}";
