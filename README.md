@@ -7,3 +7,13 @@ command:
 ## > Node server.js
 This will automatically launch the server which will be passively waiting under
 the port 4600.
+At this point, and with the help of your favourite browser, navigating the webbased
+application can be possible by accessing the following path:
+http://localhost:4600/#!/test
+
+## Splash Screen
+The first screen is a dashboard containing a little introductory paragraph along
+with 5 panels or cards leading to the dierent random input generators available:
+JSON, CSV, Strings, Integer, or Image generator. The web-based application
+also has a static top bar menu as well as a sidebar menu for quickly accessing the
+generators regardless of the current route.
