@@ -3,7 +3,7 @@ The main objective of this project is to design and develop a web-based applicat
 
 First and foremost, in order to use our application, running the web server is required. To do that, either by using the command line to the windows explorer, start by opening the project folder.
 The next step is to open the command line and run the server using the following
-command:
+command (nodejs must be already installed):
 ## > Node server.js
 This will automatically launch the server which will be passively waiting under
 the port 4600.
